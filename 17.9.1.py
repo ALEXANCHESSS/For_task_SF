@@ -33,19 +33,16 @@ def binary_search(array, element, left, right):
     else:
         return binary_search(array, element, middle+1, right)
 
-def min_list(x):
-    list_ = min(check_and_change_list(x))
-    return list_
-
-def max_list(x):
-    list_ = max(check_and_change_list(x))
-    return list_
+def len_list(x):
+    list_ = len(check_and_change_list(x))
+    return list_-1
 
 
 
 inter =  input("Введите числа через пробел: ")
 element = int(input("Введите число: "))
-list_ = binary_search(sort_list(inter), element, min_list(inter), max_list(inter))
+list_ = binary_search(sort_list(inter), element, 0, len_list(inter))
 
 
 print(list_)
+
